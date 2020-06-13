@@ -131,3 +131,10 @@ dmypy.json
 
 # Ignore R elements
 *.Rproj
+*.Rhistory
+
+# Ignore files 
+*.xlsx
+*.xls
+*.json
+
