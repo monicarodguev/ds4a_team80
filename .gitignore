@@ -137,8 +137,14 @@ dmypy.json
 *.xlsx
 *.xls
 *.json
+<<<<<<< HEAD
 *.doc
 *.docx
 *.png
 *.jpg
 
+=======
+*.docx
+*.doc
+*.pdf
+>>>>>>> fd1e85c425e0a2c557d05a8d688109f3508df2c1
