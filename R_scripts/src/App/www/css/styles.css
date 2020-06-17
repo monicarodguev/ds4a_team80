@@ -1,0 +1,34 @@
+@media (min-width: 768px) {
+  .sidebar-mini.sidebar-collapse .main-header .logo {
+    width: 230px;
+  }
+}
+@media (min-width: 768px) {
+  .sidebar-mini.sidebar-collapse .main-header .navbar {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-header .navbar {
+    margin-left: 230px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-header .logo, .main-header .navbar {
+    width: 100% !important;
+    float: none;
+  }
+}
+
+.main-header .logo {
+  width: 230px;
+}
+
+
+.jhr{
+  display: inline;
+  vertical-align: middle;
+  padding-left: 10px;
+}
