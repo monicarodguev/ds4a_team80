@@ -15,7 +15,7 @@ def carga_datos( ruta, diccionario, modulo ) :
     df.rename(columns={diccionario[modulo]['id']:'id', diccionario[modulo]['fecha']:'fecha'}, inplace=True)
 
     df['year'] = df[ 'fecha' ].apply( lambda x : x.year )
-    df['yearmonth'] = df[ 'fecha' ].apply( lambda x : x.year * 100 + x.month )
+    df['year_month'] = df[ 'fecha' ].apply( lambda x : x.year * 100 + x.month )
 
     return df
 
