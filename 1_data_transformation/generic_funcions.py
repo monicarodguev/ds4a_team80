@@ -15,6 +15,7 @@ def carga_datos( ruta, diccionario, modulo ) :
     df.rename(columns={diccionario[modulo]['id']:'id', diccionario[modulo]['fecha']:'fecha'}, inplace=True)
 
     df['year'] = df[ 'fecha' ].apply( lambda x : x.year )
+    df['month'] = df[ 'fecha' ].apply( lambda x : x.month )
     df['year_month'] = df[ 'fecha' ].apply( lambda x : x.year * 100 + x.month )
 
     return df
@@ -23,8 +24,8 @@ def carga_datos( ruta, diccionario, modulo ) :
 ### The following function gets the first character from specified column from a dataframe.
 #   Returns: dataframe with new code column
 #   Author: monicarodguev
-def letra_codigo( df, columna  ):
-    df[ columna + '_cod' ] = df[ columna ].apply( lambda x : str(x)[0] )
+def letra_codigo( df, columna ):
+    df[ columna + '_cod' ] = df[ columna ].apply( lambda x : str(x)[0].lower() )
     return df
 
 
@@ -47,3 +48,29 @@ def base_ids_mensual( ruta ):
 
     ndf = ids.merge(dy, on ='key').merge(dm, on ='key')[['id','year','month']]
     return ndf
+
+### This function returns dictionary with keys information about tables
+#   Returns: dictionary with name of column of id and date from all tables
+#   Author: monicarodguev
+def diccionario_llaves():
+    dccio = {
+        'ACT' : { 'id': 'ID', 'fecha': 'FE_RESULTADO', 'fecha_no_ok': False},
+        'ACT_DESAGREGADO' : { 'id': 'NUMERO IDENTIFICACION', 'fecha': 'FE_RESULTADO', 'fecha_no_ok': False},
+        'Adherencia' : { 'id': 'ds_identificacion', 'fecha': 'FE_ENTREVISTA', 'fecha_no_ok': False},
+        'Antecedentes_familiares' : { 'id': 'Id', 'fecha': 'FE_ALTA', 'fecha_no_ok': False},
+        'Antecedentes_patologicos' : { 'id': 'DS_IDENTIFICACION', 'fecha': 'FE_ACTUALIZA' , 'fecha_no_ok': False},
+        'Ayudas_diagnosticas' : { 'id': 'Numero_Identificacion', 'fecha': 'Fecha_Orden', 'fecha_no_ok': False},
+        'Biologicos Asma' : { 'id': 'Identificacion', 'fecha': 'Fecha_Dcto', 'fecha_no_ok': False},
+        'Calidad de vida relacioada en salud' : { 'id': 'Identificacion', 'fecha': 'FE_ALTA', 'fecha_no_ok': False},
+        #'Datos basicos' : { 'id': 'ID', 'fecha': '', 'fecha_no_ok': False},
+        'Disnea' : { 'id': 'id', 'fecha': 'FE_ALTA', 'fecha_no_ok': False},
+        'Farmacovigilancia RAM' : { 'id': 'NRO_IDENTIFICACION', 'fecha':'FECHA_NOTIFICACION' , 'fecha_no_ok': False},
+        'Habitos' : { 'id': 'DS_IDENTIFICACION', 'fecha': 'Fe_Registro', 'fecha_no_ok': False},
+        'Hospitalizaciones' : { 'id': 'Id', 'fecha': 'Fecha Ingreso', 'fecha_no_ok': False},
+        'Incosistencias en reclamacion' : { 'id':'IDENTIFICACIÓN' , 'fecha':'FE_REGISTRO' , 'fecha_no_ok': True, 'formato_fecha': '%Y-%m-%d'},
+        'Medicamentos' : { 'id':'Id' , 'fecha': 'Fecha_Emision', 'fecha_no_ok': False},
+        'Mediciones de peso y talla' : { 'id':'DS_IDENTIFICACION' , 'fecha': 'FE_alta' , 'fecha_no_ok': False},
+        'Urgencias' : { 'id':'Numero_Identificacion' , 'fecha':'Fecha_Emision' , 'fecha_no_ok': False},
+        'Vacunacion' : { 'id':'Numero_de_documento' , 'fecha':'Fecha_Emision' , 'fecha_no_ok': False}
+        }
+    return dccio
