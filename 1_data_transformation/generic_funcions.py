@@ -66,23 +66,23 @@ def base_ids_mensual( ruta ):
 #   Author: monicarodguev
 def diccionario_llaves():
     dccio = {
-        'ACT' : { 'id': 'ID', 'fecha': 'FE_RESULTADO', 'fecha_no_ok': False},
-        'ACT_DESAGREGADO' : { 'id': 'NUMERO IDENTIFICACION', 'fecha': 'FE_RESULTADO', 'fecha_no_ok': False},
-        'Adherencia' : { 'id': 'ds_identificacion', 'fecha': 'FE_ENTREVISTA', 'fecha_no_ok': False},
-        'Antecedentes_familiares' : { 'id': 'Id', 'fecha': 'FE_ALTA', 'fecha_no_ok': False},
-        'Antecedentes_patologicos' : { 'id': 'DS_IDENTIFICACION', 'fecha': 'FE_ACTUALIZA' , 'fecha_no_ok': False},
-        'Ayudas_diagnosticas' : { 'id': 'Numero_Identificacion', 'fecha': 'Fecha_Orden', 'fecha_no_ok': False},
-        'Biologicos Asma' : { 'id': 'Identificacion', 'fecha': 'Fecha_Dcto', 'fecha_no_ok': False},
-        'Calidad de vida relacioada en salud' : { 'id': 'Identificacion', 'fecha': 'FE_ALTA', 'fecha_no_ok': False},
-        #'Datos basicos' : { 'id': 'ID', 'fecha': '', 'fecha_no_ok': False},
-        'Disnea' : { 'id': 'id', 'fecha': 'FE_ALTA', 'fecha_no_ok': False},
-        'Farmacovigilancia RAM' : { 'id': 'NRO_IDENTIFICACION', 'fecha':'FECHA_NOTIFICACION' , 'fecha_no_ok': False},
-        'Habitos' : { 'id': 'DS_IDENTIFICACION', 'fecha': 'Fe_Registro', 'fecha_no_ok': False},
-        'Hospitalizaciones' : { 'id': 'Id', 'fecha': 'Fecha Ingreso', 'fecha_no_ok': False},
-        'Incosistencias en reclamacion' : { 'id':'IDENTIFICACIÓN' , 'fecha':'FE_REGISTRO' , 'fecha_no_ok': True, 'formato_fecha': '%Y-%m-%d'},
-        'Medicamentos' : { 'id':'Id' , 'fecha': 'Fecha_Emision', 'fecha_no_ok': False},
-        'Mediciones de peso y talla' : { 'id':'DS_IDENTIFICACION' , 'fecha': 'FE_alta' , 'fecha_no_ok': False},
-        'Urgencias' : { 'id':'Numero_Identificacion' , 'fecha':'Fecha_Emision' , 'fecha_no_ok': False},
-        'Vacunacion' : { 'id':'Numero_de_documento' , 'fecha':'Fecha_Emision' , 'fecha_no_ok': False}
+        'ACT' : { 'id': 'ID', 'fecha': 'FE_RESULTADO', 'fecha_no_ok': False, 'prefi':'act' },
+        'ACT_DESAGREGADO' : { 'id': 'NUMERO IDENTIFICACION', 'fecha': 'FE_RESULTADO', 'fecha_no_ok': False, 'prefi':'acd' },
+        'Adherencia' : { 'id': 'ds_identificacion', 'fecha': 'FE_ENTREVISTA', 'fecha_no_ok': False, 'prefi':'adh' },
+        'Antecedentes_familiares' : { 'id': 'Id', 'fecha': 'FE_ALTA', 'fecha_no_ok': False, 'prefi':'ant' },
+        'Antecedentes_patologicos' : { 'id': 'DS_IDENTIFICACION', 'fecha': 'FE_ACTUALIZA' , 'fecha_no_ok': False, 'prefi':'ant' },
+        'Ayudas_diagnosticas' : { 'id': 'Numero_Identificacion', 'fecha': 'Fecha_Orden', 'fecha_no_ok': False, 'prefi':'ayu' },
+        'Biologicos Asma' : { 'id': 'Identificacion', 'fecha': 'Fecha_Dcto', 'fecha_no_ok': False, 'prefi':'bio' },
+        'Calidad de vida relacioada en salud' : { 'id': 'Identificacion', 'fecha': 'FE_ALTA', 'fecha_no_ok': False, 'prefi':'cal' },
+        #'Datos basicos' : { 'id': 'ID', 'fecha': '', 'fecha_no_ok': False, 'prefi': },
+        'Disnea' : { 'id': 'id', 'fecha': 'FE_ALTA', 'fecha_no_ok': False, 'prefi':'epo' },
+        'Farmacovigilancia RAM' : { 'id': 'NRO_IDENTIFICACION', 'fecha':'FECHA_NOTIFICACION' , 'fecha_no_ok': False, 'prefi':'far' },
+        'Habitos' : { 'id': 'DS_IDENTIFICACION', 'fecha': 'Fe_Registro', 'fecha_no_ok': False, 'prefi':'hab' },
+        'Hospitalizaciones' : { 'id': 'Id', 'fecha': 'Fecha Ingreso', 'fecha_no_ok': False, 'prefi':'hos' },
+        'Incosistencias en reclamacion' : { 'id':'IDENTIFICACIÓN' , 'fecha':'FE_REGISTRO' , 'fecha_no_ok': True, 'formato_fecha': '%Y-%m-%d', 'prefi':'inc' },
+        'Medicamentos' : { 'id':'Id' , 'fecha': 'Fecha_Emision', 'fecha_no_ok': False, 'prefi':'med' },
+        'Mediciones de peso y talla' : { 'id':'DS_IDENTIFICACION' , 'fecha': 'FE_alta' , 'fecha_no_ok': False, 'prefi':'imc' },
+        'Urgencias' : { 'id':'Numero_Identificacion' , 'fecha':'Fecha_Emision' , 'fecha_no_ok': False, 'prefi':'urg' },
+        'Vacunacion' : { 'id':'Numero_de_documento' , 'fecha':'Fecha_Emision' , 'fecha_no_ok': False, 'prefi':'vac' }
         }
     return dccio
