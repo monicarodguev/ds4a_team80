@@ -28,6 +28,7 @@ def letra_codigo( df, columna ):
     df[ columna + '_cod' ] = df[ columna ].apply( lambda x : str(x)[0].lower() )
     return df
 
+
 ### The following function change all the strings to lower using the name of one string column.
 #   Returns: dataframe with new code column
 #   Author: monicarodguev
@@ -37,6 +38,7 @@ def letra_lower( df, columna ):
         if df[col].dtype == a:
             df[col] = df[col].str.lower()
     return df
+
 
 
 ### This function gets the "initial" table. That is all the ids in periods from 201601 to 202012
