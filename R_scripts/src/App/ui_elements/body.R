@@ -19,99 +19,31 @@ output[['select_lenguage_output']] = renderUI(expr = {
     
 })
 
-
-# developersBox -----------------------------------------------------------
-
-output[['userBox_Mathias']] = renderUI({
-  widgetUserBox(
-    title = "Mathías Verano",
-    subtitle = "Subtitle",
-    type = NULL,
-    width = 12,
-   # src = "img/profile_photo/mathias_profile.jpg",
-     src = "img/profile_photo/mathias_profile.jpg",
-    color = "red",
-    closable = FALSE,
-    "add text here",
-    footer = "The footer here!"
-  )
-})
-output[['userBox_Monica']] = renderUI({
-  widgetUserBox(
-    title = "Mónica Rodríguez",
-    subtitle = "Subtitle",
-    type = NULL,
-    width = 12,
-    src = "img/profile_photo/unknown_profile.png",
-    color = "yellow",
-    closable = FALSE,
-    "add text here",
-    footer = "The footer here!"
-  )
-})
-output[['userBox_Ricardo']] = renderUI({
-  widgetUserBox(
-    title = "Ricardo Bonilla",
-    subtitle = "Subtitle",
-    type = NULL,
-    width = 12,
-    src = "img/profile_photo/unknown_profile.png",
-    color = "yellow",
-    closable = FALSE,
-    "add text here",
-    footer = "The footer here!"
-  )
-})
-output[['userBox_Camila']] = renderUI({
-  widgetUserBox(
-    title = "Camila Lozano",
-    subtitle = "Subtitle",
-    type = NULL,
-    width = 12,
-    src = "img/profile_photo/unknown_profile.png",
-    color = "yellow",
-    closable = FALSE,
-    "add text here",
-    footer = "The footer here!"
-  )
-})
-output[['userBox_Jesus']] = renderUI({
-  widgetUserBox(
-    title = "Jesús Parra",
-    subtitle = "Subtitle",
-    type = NULL,
-    width = 12,
-    src = "img/profile_photo/unknown_profile.png",
-    color = "yellow",
-    closable = FALSE,
-    "add text here",
-    footer = "The footer here!"
-  )
-})
-output[['userBox_Julian']] = renderUI({
-  widgetUserBox(
-    title = "Julián Gutierrez",
-    subtitle = "Subtitle",
-    type = NULL,
-    width = 12,
-    src = "img/profile_photo/unknown_profile.png",
-    color = "yellow",
-    closable = FALSE,
-    "add text here",
-    footer = "The footer here!"
-  )
-})
-
 # tabItems content --------------------------------------------------------
 
 output[["tabItem_EDA"]] = renderUI({
   tagList(
-    h4( lenguage_outputs[['sidebarText_EDA']]() )
+    uiOutput('EDA_filter_box'),
+    uiOutput('EDA_info_box'),
+    fluidRow(
+      column(6, uiOutput('EDA_scatterplot_adherence')),
+      column(6, uiOutput('EDA_radarplot_act'))
+    )#,
+    #fluidRow(
+    #  column(
+    #    12#,
+    #    #uiOutput
+    #  )
+    #)
+    
   )
 })
 output[["tabItem_ID_INFORM"]] = renderUI({
   tagList(
-    h4( lenguage_outputs[['sidebarText_ID_INFORM']]() )
+    #h4( lenguage_outputs[['sidebarText_ID_INFORM']]() ),
+    uiOutput('IDINFORM_search_box'),
+    uiOutput('IDINFORM_panel_ui')
+    
   )
 })
 output[["tabItem_DEVELOPERS"]] = renderUI({
@@ -137,7 +69,8 @@ output[["tabItem_MODEL"]] = renderUI({
 
 output[["tabItem_DOCUMENTATION"]] = renderUI({
   tagList(
-    h4( lenguage_outputs[['sidebarText_DOCUMENTATION']]() )
+    h4( lenguage_outputs[['sidebarText_DOCUMENTATION']]() ),
+    uiOutput('DOCUMENTATION_accordion')
   )
 })
 

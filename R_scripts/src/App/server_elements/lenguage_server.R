@@ -18,5 +18,12 @@ lenguage_outputs[["sidebarText_DEVELOPERS"]] = reactive({ filter(.data = lenguag
 lenguage_outputs[["sidebarText_MODEL"]] = reactive({ filter(.data = lenguage_outputs[["lenguage_table"]](), Section == 'sidebar', component == 'MODEL')[['text']] })
 lenguage_outputs[["sidebarText_DOCUMENTATION"]] = reactive({ filter(.data = lenguage_outputs[["lenguage_table"]](), Section == 'sidebar', component == 'DOCUMENTATION')[['text']] })
 
+lenguage_outputs[['bodyText_mathias.profile']] = reactive({ filter(.data = lenguage_outputs[["lenguage_table"]](), Section == 'body', component == 'mathias_profile')[['text']] })
+lenguage_outputs[['bodyText_monica.profile']] = reactive({ filter(.data = lenguage_outputs[["lenguage_table"]](), Section == 'body', component == 'monica_profile')[['text']] })
+lenguage_outputs[['bodyText_julian.profile']] = reactive({ filter(.data = lenguage_outputs[["lenguage_table"]](), Section == 'body', component == 'julian_profile')[['text']] })
+lenguage_outputs[['bodyText_ricardo.profile']] = reactive({ filter(.data = lenguage_outputs[["lenguage_table"]](), Section == 'body', component == 'ricardo_profile')[['text']] })
+lenguage_outputs[['bodyText_camila.profile']] = reactive({ filter(.data = lenguage_outputs[["lenguage_table"]](), Section == 'body', component == 'camila_profile')[['text']] })
+lenguage_outputs[['bodyText_jesus.profile']] = reactive({ filter(.data = lenguage_outputs[["lenguage_table"]](), Section == 'body', component == 'jesus_profile')[['text']] })
+
 
 

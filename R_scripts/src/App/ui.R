@@ -15,6 +15,8 @@ shinyUI(
      )
     ),
    body = dashboardBody(
+     useSweetAlert(),
+     chooseSliderSkin("Nice", color = "black"),
      uiOutput('head_styles'),
      uiOutput('tabItems')
    ),
