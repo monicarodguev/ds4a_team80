@@ -25,7 +25,7 @@ base_ = base.groupby(['id','year','month'])['punt_control'].mean().\
 pre = dcc[modulo]['prefi'] + '_'
 
 base_.columns = [pre + s for s in base_.columns]
-base_.rename( columns={ pre+'id':'id', pref+'year':'year', pref+'month':'month' }, inplace=True)
+base_.rename( columns={ pre+'id':'id', pre+'year':'year', pre+'month':'month' }, inplace=True)
 
 
 # Merge
