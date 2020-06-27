@@ -47,6 +47,7 @@ def letra_lower( df, columna ):
 def base_ids_mensual( ruta ):
     # All ids
     ids = pd.read_excel( ruta + 'Datos basicos.xlsx')
+    ids.drop_duplicates( subset = 'ID', inplace= True )
     ids.rename(columns={'ID':'id'}, inplace=True)
 
     # All periods

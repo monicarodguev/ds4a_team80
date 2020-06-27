@@ -47,4 +47,4 @@ base_t = base_p.merge( base_p_j, how = 'left' )
 base_t = base_t.fillna( 0 )
 
 # Merge
-base_final_hos = ids_mensual.merge( base_t, how='left')
+base_final_urg = ids_mensual.merge( base_t, how='left')

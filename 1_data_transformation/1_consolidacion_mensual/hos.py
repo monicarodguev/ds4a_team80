@@ -8,14 +8,15 @@ modulo = 'Hospitalizaciones'
 
 # Extract
 base = gf.carga_datos( ruta = ruta_archivos, diccionario = dcc, modulo = modulo )
+base.columns = ['id', 'Sexo', 'EDAD (Años)', 'Id Diagnostico Egreso','Descripción diagnostico (egreso)', 'Dias Uci', 'Dias Uce','Dias de Estancia (Calculada)', 'fecha', 'Fecha Egreso', 'year', 'month', 'year_month']
 
 # Transform
 base = gf.letra_codigo( base, 'Id Diagnostico Egreso' )
 
-base_ = base.groupby(['id','year','month','Id Diagnostico Egreso_cod'])[['Dias Uci','Dias Uce','Días de Estancia (Calculada)']].sum().reset_index()
+base_ = base.groupby(['id','year','month','Id Diagnostico Egreso_cod'])[['Dias Uci','Dias Uce','Dias de Estancia (Calculada)']].sum().reset_index()
 base_['num'] = 1
 base_['diag'] = base_['Id Diagnostico Egreso_cod'].apply( lambda x : 'j' if x == 'j' else 'otra' )
-base_.rename( columns={ 'Dias Uci':'uci', 'Dias Uce':'uce',  'Días de Estancia (Calculada)':'est' }, inplace=True)
+base_.rename( columns={ 'Dias Uci':'uci', 'Dias Uce':'uce',  'Dias de Estancia (Calculada)':'est' }, inplace=True)
 
 # pivot table to have separate variables, nans replaced with zero
 base_p = base_.pivot_table(index=['id','year','month'], columns='diag', values=['uci','uce','est','num'], aggfunc=np.sum).reset_index()
