@@ -13,7 +13,7 @@ import pandas as pd
 def carga_datos( ruta, diccionario, modulo ) :
     df = pd.read_excel( ruta + modulo + '.xlsx')
     df.rename(columns={diccionario[modulo]['id']:'id', diccionario[modulo]['fecha']:'fecha'}, inplace=True)
-
+    df[ 'fecha' ] = pd.to_datetime(df["fecha"])
     df['year'] = df[ 'fecha' ].apply( lambda x : x.year )
     df['month'] = df[ 'fecha' ].apply( lambda x : x.month )
     df['year_month'] = df[ 'fecha' ].apply( lambda x : x.year * 100 + x.month )
