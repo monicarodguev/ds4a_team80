@@ -4,7 +4,7 @@
 ###
 
 # Parameters
-modulo = 'ACT_DESAGREGADO'
+modulo = 'Incosistencias en reclamacion'
 
 # Extract
 base = gf.carga_datos( ruta = ruta_archivos, diccionario = dcc, modulo = modulo )

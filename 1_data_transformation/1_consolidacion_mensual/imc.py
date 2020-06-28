@@ -4,7 +4,7 @@
 ###
 
 # Parameters
-modulo = 'Habitos'
+modulo = 'Mediciones de peso y talla'
 
 # Extract
 base = gf.carga_datos( ruta = ruta_archivos, diccionario = dcc, modulo = modulo )
@@ -21,4 +21,4 @@ base = base.drop(columns=['year_month', 'fecha'])
 
 
 # Merge
-base_final_hab = ids_mensual.merge( base, how='left')
+base_final_imc = ids_mensual.merge( base, how='left')
