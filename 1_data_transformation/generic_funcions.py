@@ -87,3 +87,21 @@ def diccionario_llaves():
         'Vacunacion' : { 'id':'Numero_de_documento' , 'fecha':'Fecha_Emision' , 'fecha_no_ok': False, 'prefi':'vac' }
         }
     return dccio
+
+
+### This function returns dictionary with the aggrupation function that need to be use to compute features
+#   Returns: dictionary variables per aggregation functions
+#   Author: monicarodguev
+def diccionario_agg_functions():
+    dccio = {
+            'sum'  : {'variables' : ['far_rea_asma', 'far_rea_total','far_evo_aun','far_cau_def', 'far_cau_otra','far_gra_leve','far_gra_mod',
+                                     'hos_num','hos_num_j','hos_uci','hos_uci_j','hos_uce','hos_uce_j','hos_est','hos_est_j',
+                                     'med_num_dis','med_flag_j','med_flag_otra',
+                                     'urg_urg', 'urg_total','urg_j_urg', 'urg_j_total','vac_cant'] },
+            'avg'  : {'variables' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis','med_num_doses_j', 'med_num_doses_otra'] },
+            'flag' : {'variables' : ['far_rea_asma', 'far_rea_total','far_rea_asma', 'far_rea_total','far_rea_asma', 'far_rea_total','far_evo_con','far_des_si','far_des_no','far_mis_si',
+                                     'med_flag_j','med_flag_otra','vac_cant']},
+            'var'  : {'variables' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis',
+                                     'med_num_doses_j', 'med_num_doses_otra']}
+            }
+    return dccio
