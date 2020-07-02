@@ -79,7 +79,7 @@ base_['culpa'] = base_['TIPO EVENTO'].apply( lambda x : 'inc' if x == 'inconcien
 # pivot table to have separate variables, nans replaced with zero
 base_p = base_.pivot_table(index=['id','year','month'], columns='culpa', values=[dcc[modulo]['prefi']], aggfunc=np.sum).reset_index()
 base_p.columns = ['_'.join(col).strip() for col in base_p.columns.values]
-base_p.fillna( 0 , inplace = True)
+# base_p.fillna( 0 , inplace = True)
 base_p.rename( columns={ 'id_':'id', 'year_':'year', 'month_':'month' }, inplace=True)
 
 # Merge

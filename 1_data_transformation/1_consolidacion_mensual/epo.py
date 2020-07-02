@@ -23,9 +23,10 @@ base_ = base.groupby(['id','year','month','exam'])['id'].count().\
 
 base_p = base_.pivot_table(index=['id','year','month'], columns='exam', values= [dcc[modulo]['prefi']]).reset_index()
 base_p.columns = ['_'.join(col).strip() for col in base_p.columns.values]
-base_p.fillna( 0 , inplace = True)
+# base_p.fillna( 0 , inplace = True)
 
 base_p.rename(columns={ 'id_':'id', 'month_':'month', 'year_':'year'}, inplace=True)
+base_p['epo_total']=base_p.iloc[:,-4:].sum(axis=1)
 
 # Merge
 base_final_epo = ids_mensual.merge( base_p, how='left')

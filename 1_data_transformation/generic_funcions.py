@@ -70,7 +70,7 @@ def diccionario_llaves():
         'ACT' : { 'id': 'ID', 'fecha': 'FE_RESULTADO', 'fecha_no_ok': False, 'prefi':'act' },
         'ACT_DESAGREGADO' : { 'id': 'NUMERO IDENTIFICACION', 'fecha': 'FE_RESULTADO', 'fecha_no_ok': False, 'prefi':'acd' },
         'Adherencia' : { 'id': 'ds_identificacion', 'fecha': 'FE_ENTREVISTA', 'fecha_no_ok': False, 'prefi':'adh' },
-        'Antecedentes_familiares' : { 'id': 'Id', 'fecha': 'FE_ALTA', 'fecha_no_ok': False, 'prefi':'ant' },
+        'Antecedentes_familiares' : { 'id': 'Id', 'fecha': 'FE_ALTA', 'fecha_no_ok': False, 'prefi':'anf' },
         'Antecedentes_patologicos' : { 'id': 'DS_IDENTIFICACION', 'fecha': 'FE_ACTUALIZA' , 'fecha_no_ok': False, 'prefi':'ant' },
         'Ayudas_diagnosticas' : { 'id': 'Numero_Identificacion', 'fecha': 'Fecha_Orden', 'fecha_no_ok': False, 'prefi':'ayu' },
         'Biologicos Asma' : { 'id': 'Identificacion', 'fecha': 'Fecha_Dcto', 'fecha_no_ok': False, 'prefi':'bio' },
@@ -122,6 +122,54 @@ def diccionario_agg_functions():
     'cal' : { 'mod' : 'Calidad de vida relacioada en salud',
               'avg' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
               'var' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
-            }
+            },
+    'act' : { 'mod' : 'ACT',
+              'avg' : ['act_punt_control'],
+              'var' : ['act_punt_control'],
+            },
+        
+    'acd' : { 'mod' : 'ACT_DESAGREGADO',
+              'avg' : ['acd_cont_asma','acd_ef_act_usu', 'acd_ef_sueno', 'acd_falta_aire','acd_uso_inhal'],
+              'var' : ['acd_cont_asma','acd_ef_act_usu', 'acd_ef_sueno', 'acd_falta_aire','acd_uso_inhal'],
+            },
+        
+    'ant' : { 'mod' : 'ACT_DESAGREGADO',
+              'sum' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
+              'var' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
+            },
+        
+    'anf' : { 'mod' : 'Antecedentes_familiares',
+              'sum' : ['anf_j','anf_otra'],
+            },
+
+    'ant' : { 'mod' : 'Antecedentes_patologicos',
+              'sum' : ['ant_j','ant_otra'],
+            },
+
+    'ayu' : { 'mod' : 'Ayudas_diagnosticas',
+              'avg' : ['ayu_exa'],
+            },
+        
+    'bio' : { 'mod' : 'Biologicos Asma',
+              'sum' : ['bio_veces'],
+              'avg' : ['bio_benralizumab', 'bio_dupilumab', 'bio_mepolizumab', 'bio_omalizumab', 'bio_total'],
+            },
+        
+    'epo' : { 'mod' : 'Disnea',
+              'sum' : ['epo_1', 'epo_2', 'epo_3', 'epo_4', 'epo_total'],
+            },
+        
+    'hab' : { 'mod' : 'Habitos',
+              'avg' : ['hab_alcohol', 'hab_cigarrillo', 'hab_ejercicio'],
+              'var' : ['hab_alcohol', 'hab_cigarrillo', 'hab_ejercicio'],
+            },
+        
+    'inc' : { 'mod' : 'Incosistencias en reclamacion',
+              'sum' : ['inc_con', 'inc_inc'],
+            },
+        
+    'imc' : { 'mod' : 'Mediciones de peso y talla',
+              'avg' : ['imc'],
+            },
         }
     return dccio
