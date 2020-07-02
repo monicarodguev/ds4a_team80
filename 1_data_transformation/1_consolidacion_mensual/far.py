@@ -117,4 +117,4 @@ submodulos = {'ind': { 'base' : base_ind},
 
 base_final_far = ids_mensual
 for key in submodulos:
-    base_final_far = base_final_far.merge( submodulos[key]['base'].head() , how='left')
+    base_final_far = base_final_far.merge( submodulos[key]['base'] , how='left')

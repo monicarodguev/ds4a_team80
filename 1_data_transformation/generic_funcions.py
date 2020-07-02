@@ -94,14 +94,34 @@ def diccionario_llaves():
 #   Author: monicarodguev
 def diccionario_agg_functions():
     dccio = {
-            'sum'  : {'variables' : ['far_rea_asma', 'far_rea_total','far_evo_aun','far_cau_def', 'far_cau_otra','far_gra_leve','far_gra_mod',
-                                     'hos_num','hos_num_j','hos_uci','hos_uci_j','hos_uce','hos_uce_j','hos_est','hos_est_j',
-                                     'med_num_dis','med_flag_j','med_flag_otra',
-                                     'urg_urg', 'urg_total','urg_j_urg', 'urg_j_total','vac_cant'] },
-            'avg'  : {'variables' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis','med_num_doses_j', 'med_num_doses_otra'] },
-            'flag' : {'variables' : ['far_rea_asma', 'far_rea_total','far_rea_asma', 'far_rea_total','far_rea_asma', 'far_rea_total','far_evo_con','far_des_si','far_des_no','far_mis_si',
-                                     'med_flag_j','med_flag_otra','vac_cant']},
-            'var'  : {'variables' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis',
-                                     'med_num_doses_j', 'med_num_doses_otra']}
+    'far' : { 'mod' : 'Farmacovigilancia RAM',
+              'sum' : ['far_rea_asma', 'far_rea_total','far_evo_aun','far_cau_def', 'far_cau_otra','far_gra_leve','far_gra_mod'],
+              'flag' : ['far_rea_asma', 'far_rea_total','far_rea_asma', 'far_rea_total','far_rea_asma', 'far_rea_total','far_evo_con','far_des_si','far_des_no','far_mis_si']
+            },
+
+    'hos' : { 'mod' : 'Hospitalizaciones',
+              'sum' : ['hos_num','hos_num_j','hos_uci','hos_uci_j','hos_uce','hos_uce_j','hos_est','hos_est_j']
+            },
+
+    'med' : { 'mod' : 'Medicamentos',
+              'sum' : ['med_num_dis','med_flag_j','med_flag_otra'],
+              'avg' : ['med_num_doses_j', 'med_num_doses_otra'],
+              'flag' : ['med_flag_j','med_flag_otra'],
+              'var' : ['med_num_doses_j', 'med_num_doses_otra']
+            },
+
+    'urg' : { 'mod' : 'Urgencias',
+              'sum' : ['urg_urg', 'urg_total','urg_j_urg', 'urg_j_total']
+            },
+
+    'vac' : { 'mod' : 'Vacunacion',
+              'sum' : ['vac_cant'],
+              'flag' : ['vac_cant'],
+            },
+
+    'cal' : { 'mod' : 'Calidad de vida relacioada en salud',
+              'avg' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
+              'var' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
             }
+        }
     return dccio

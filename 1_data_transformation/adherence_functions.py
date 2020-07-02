@@ -30,4 +30,6 @@ def base_features_adeherencia0( ruta, diccionario, ids ):
     base_c['d_meses'] = ( base_c['year']*12 + base_c['month'] ) - ( base_c['year_c']*12 + base_c['month_c'] )
     base_d = base_c[base_c['d_meses'] > 0 ]
 
-    return base_d
+    base_d.rename(columns={'year':'year_obs', 'month':'month_obs'}, inplace=True)
+
+    return base_d, base_p
