@@ -96,7 +96,8 @@ def diccionario_agg_functions():
     dccio = {
     'far' : { 'mod' : 'Farmacovigilancia RAM',
               'sum' : ['far_rea_asma', 'far_rea_total','far_evo_aun','far_cau_def', 'far_cau_otra','far_gra_leve','far_gra_mod'],
-              'flag' : ['far_rea_asma', 'far_rea_total','far_rea_asma', 'far_rea_total','far_rea_asma', 'far_rea_total','far_evo_con','far_des_si','far_des_no','far_mis_si']
+              'flag' : ['far_rea_asma', 'far_rea_total','far_rea_asma', 'far_rea_total','far_rea_asma', 'far_rea_total','far_evo_con','far_des_si','far_des_no','far_mis_si'],
+              'foto' : ['far_rea_asma', 'far_rea_total']
             },
 
     'hos' : { 'mod' : 'Hospitalizaciones',
@@ -122,22 +123,23 @@ def diccionario_agg_functions():
     'cal' : { 'mod' : 'Calidad de vida relacioada en salud',
               'avg' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
               'var' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
+              'foto' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
             },
     'act' : { 'mod' : 'ACT',
               'avg' : ['act_punt_control'],
               'var' : ['act_punt_control'],
             },
-        
+
     'acd' : { 'mod' : 'ACT_DESAGREGADO',
               'avg' : ['acd_cont_asma','acd_ef_act_usu', 'acd_ef_sueno', 'acd_falta_aire','acd_uso_inhal'],
               'var' : ['acd_cont_asma','acd_ef_act_usu', 'acd_ef_sueno', 'acd_falta_aire','acd_uso_inhal'],
             },
-        
+
     'ant' : { 'mod' : 'ACT_DESAGREGADO',
               'sum' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
               'var' : ['cal_ent','cal_psi', 'cal_rel', 'cal_fis'],
             },
-        
+
     'anf' : { 'mod' : 'Antecedentes_familiares',
               'sum' : ['anf_j','anf_otra'],
             },
@@ -149,27 +151,28 @@ def diccionario_agg_functions():
     'ayu' : { 'mod' : 'Ayudas_diagnosticas',
               'avg' : ['ayu_exa'],
             },
-        
+
     'bio' : { 'mod' : 'Biologicos Asma',
               'sum' : ['bio_veces'],
               'avg' : ['bio_benralizumab', 'bio_dupilumab', 'bio_mepolizumab', 'bio_omalizumab', 'bio_total'],
             },
-        
+
     'epo' : { 'mod' : 'Disnea',
               'sum' : ['epo_1', 'epo_2', 'epo_3', 'epo_4', 'epo_total'],
             },
-        
+
     'hab' : { 'mod' : 'Habitos',
               'avg' : ['hab_alcohol', 'hab_cigarrillo', 'hab_ejercicio'],
               'var' : ['hab_alcohol', 'hab_cigarrillo', 'hab_ejercicio'],
             },
-        
+
     'inc' : { 'mod' : 'Incosistencias en reclamacion',
               'sum' : ['inc_con', 'inc_inc'],
             },
-        
+
     'imc' : { 'mod' : 'Mediciones de peso y talla',
               'avg' : ['imc'],
+              'foto' : ['imc'],
             },
         }
     return dccio
