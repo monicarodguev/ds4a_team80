@@ -48,4 +48,12 @@ ACT_df <- data.frame(
   max = rep(5,5)
 )
 
-patient = c('123456', '1258')
+print(getwd())
+
+
+data_Pacientes = read.csv('../../input/BaseDatos.csv') %>% 
+  as.tibble %>% 
+  filter(nuls < 53)
+  
+patient = unique(data_Pacientes[['id']])
+

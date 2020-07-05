@@ -1,3 +1,18 @@
+# IDINFORM_Basico ---------------------------------------------------------
+
+
+
+# IDINFORM_Hospitalizaciones ----------------------------------------------
+
+
+# IDINFORM_ACT ------------------------------------------------------------
+
+
+# IDINFORM_Habitos --------------------------------------------------------
+
+
+# IDINFORM_Adherencia -----------------------------------------------------
+
 output[['IDINFORM_search_box']] = renderUI({
   tagList(
     fluidRow(
@@ -19,25 +34,108 @@ output[['IDINFORM_search_box']] = renderUI({
   )
   
 })
-
-
-output[['IDINFORM_panel_ui']] = renderUI({
-  IDINFORM_outputs[['IDINFORM_panel']]()
+output[['IDINFORM_Basico']] = renderUI({
+  tagList(
+    fluidRow(
+      column(
+        12,
+        panel(
+          heading = tags$b('Información básica'),
+          h4('Contenido')
+        )
+      )
+    )
+  )
 })
+output[['IDINFORM_Hospitalizaciones']] = renderUI({
+  tagList(
+    fluidRow(
+      column(
+        12,
+        panel(
+          heading = tags$b('Hospitalizaciones'),
+          h4('Contenido')
+        )
+      )
+    )
+  )
+})
+output[['IDINFORM_ACT']] = renderUI({
+  tagList(
+    fluidRow(
+      column(
+        12,
+        panel(
+          heading = tags$b('Encueta ACT'),
+          h4('Contenido')
+        )
+      )
+    )
+  )
+})
+output[['IDINFORM_Habitos']] = renderUI({
+  tagList(
+    fluidRow(
+      column(
+        12,
+        panel(
+          heading = tags$b('Habitos'),
+          h4('Contenido')
+        )
+      )
+    )
+  )
+})
+output[['IDINFORM_Adherencia']] = renderUI({
+  tagList(
+    fluidRow(
+      column(
+        12,
+        panel(
+          heading = tags$b('Adherencia'),
+          h4('Contenido')
+        )
+      )
+    )
+  )
+})
+
+
 
 # reactive code
 
-IDINFORM_outputs <- reactiveValues()
+# reactive values ----
+
+IDINFORM_outputs <- reactiveValues(
+  
+  'IDINFORM_panel' = tagList(
+                       fluidRow(
+                         column(
+                           12,
+                           panel(
+                             h4('Seleccione a un paciente'),
+                             status = 'warning'
+                           )
+                         )
+                       )
+                     ) 
+  
+)
+
+# ----
 
 IDINFORM_outputs[['IDINFORM_panel']] = reactive({
   if(input[['IDINFORM_search']] == ''){
     xx = tagList(
       fluidRow(
         column(
-          12,
-          panel(
-            h4('Seleccione a un paciente'),
-            status = 'warning'
+          12, align = 'center', offset = 4,
+          column(
+            3, align = 'center',
+            panel(
+              h4('Seleccione a un paciente'),
+              status = 'warning'
+            )
           )
         )
       )
@@ -48,7 +146,11 @@ IDINFORM_outputs[['IDINFORM_panel']] = reactive({
           column(
             12,
             panel(
-              h4('Reporte del paciente'),
+              uiOutput('IDINFORM_Basico'),
+              uiOutput('IDINFORM_Adherencia'),
+              uiOutput('IDINFORM_Hospitalizaciones'),
+              uiOutput('IDINFORM_ACT'),
+              uiOutput('IDINFORM_Habitos'),
               status = 'success'
             )
           )
@@ -58,10 +160,13 @@ IDINFORM_outputs[['IDINFORM_panel']] = reactive({
       xx = tagList(
         fluidRow(
           column(
-            12,
-            panel(
-              h4('El código no existe'),
-              status = 'danger'
+            12, align = 'center', offset = 4,
+            column(
+              3, align = 'center',
+              panel(
+                h4('El código no existe'),
+                status = 'danger'
+              )
             )
           )
         )
@@ -71,3 +176,6 @@ IDINFORM_outputs[['IDINFORM_panel']] = reactive({
   xx 
 })
 
+output[['IDINFORM_panel_ui']] = renderUI({
+  IDINFORM_outputs[['IDINFORM_panel']]()
+})

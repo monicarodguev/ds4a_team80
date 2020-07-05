@@ -66,10 +66,8 @@ output[["tabItem_MODEL"]] = renderUI({
     h4( lenguage_outputs[['sidebarText_MODEL']]() )
   )
 })
-
 output[["tabItem_DOCUMENTATION"]] = renderUI({
   tagList(
-    h4( lenguage_outputs[['sidebarText_DOCUMENTATION']]() ),
     uiOutput('DOCUMENTATION_accordion')
   )
 })
