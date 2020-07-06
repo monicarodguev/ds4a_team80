@@ -1,6 +1,8 @@
 shinyServer(
   function(input, output, session){
     
+    print(getwd())
+     
     source(file = 'server_elements/lenguage_server.R', local = TRUE, encoding = 'UTF-8')
     
     source(file = 'ui_elements/header.R', local = TRUE, encoding = 'UTF-8')
