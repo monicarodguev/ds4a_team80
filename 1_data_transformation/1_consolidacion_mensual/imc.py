@@ -19,6 +19,7 @@ base = base.drop(columns=['NM_PESO','NM_TALLA','Clasificacion_IMC'])
 
 base = base.drop(columns=['year_month', 'fecha'])
 
+base = base.groupby(['id','year','month'])['imc'].max().reset_index(name='imc')
 
 # Merge
 base_final_imc = ids_mensual.merge( base, how='left')

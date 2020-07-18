@@ -174,8 +174,5 @@ def diccionario_agg_functions():
               'avg' : ['imc'],
               'foto' : ['imc'],
             },
-    'adh' : { 'mod' : 'Adherencia',
-              'sum' : ['adh']
-            }
         }
     return dccio
