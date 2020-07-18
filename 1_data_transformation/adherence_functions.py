@@ -63,7 +63,7 @@ def base_features_adeherencia0( ruta, diccionario, ids ):
             y = 1
         elif x == 'ADHERENTE' :
             y = 0
-            return y
+        return y
 
     base_['adherencia_cat'] = base_['Cualitativo_ponderado'].apply( adhere )
     base_ = base_[base_['adherencia_cat'] < 2]
