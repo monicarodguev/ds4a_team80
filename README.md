@@ -1,6 +1,6 @@
 # Welcome to Team80 DS4A 2020 Repository
 
-![Team Logo](images/logo.png)
+![Team Logo](images/logo.jpg)
 
 This is the final proyect repository
 
@@ -37,5 +37,8 @@ Data Engineering heart to make model database
 ##  <span style="color:blue"> R_scripts/src </span>
 All code for shinyapps Front End
 
-## <span style="color:blue"> teamA </span>
+## <span style="color:blue"> model </span>
 Some preliminary results for traditional classification models
+
+### <span style="color:green"> proyect.ipynb </span>
+Notebook with final model code and implementation.
