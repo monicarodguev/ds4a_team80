@@ -30,7 +30,7 @@ Preliminar EDA copy
 - Notebooks with final cleaning to demographic data for Front End
 - SQL templates to make a database
 
-###  <span style="color:green"> consolidado.py / generic_funcions.py ...  </span>
+###  <span style="color:green"> consolidacion.ipynb / generic_funcions.py ...  </span>
 Data Engineering heart to make model database
 
 
