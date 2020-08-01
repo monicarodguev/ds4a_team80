@@ -1,6 +1,6 @@
 # Welcome to Team80 DS4A 2020 Repository
 
-![Team Logo](images/logo.jpg)
+![Team Logo](images/logo.jpeg)
 
 This is the final proyect repository
 
