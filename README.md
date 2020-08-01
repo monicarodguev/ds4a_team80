@@ -14,19 +14,19 @@ A quick overview of the content of this repository is presented below
     
 
 
-## 1. 0_eda 
+## 1. eda 
     The EDAs per file are located in this folder.
 
 
-## 2. 1_data_transformation
+## 2. data_transformation
     In this folder is:
     - Final cleaning of data used in the Front End
     - The modules of the construction of variables for the model.
 
-### 2.1 0_borradores
+### 2.1 borradores
     EDA depuration and preliminar feature construction.
 
-### 2.2 1_consolidacion_mensual 
+### 2.2 consolidacion_mensual 
     .py cleanining and monthly consolidation features per file.
 
 ### 2.3 ETL_To_Excel_and_SQL
@@ -50,4 +50,3 @@ A quick overview of the content of this repository is presented below
     Preliminary analysis of specific features and adherence
 ##  5. R_scripts/src
     All code for shinyapps Front End
-
