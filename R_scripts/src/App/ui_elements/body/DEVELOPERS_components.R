@@ -10,7 +10,7 @@ output[['userBox_Mathias']] = renderUI({
     src = "img/profile_photo/mathias_profile.jpg",
     color = "red",
     closable = FALSE,
-    "add text here",
+    #"add text here",
     footer = p( lenguage_outputs[['bodyText_mathias.profile']]() )
   )
 })
@@ -20,10 +20,10 @@ output[['userBox_Monica']] = renderUI({
     subtitle = "Team 80 - One Correlation",
     type = NULL,
     width = 12,
-    src = "img/profile_photo/unknown_profile.png",
-    color = "yellow",
+    src = "img/profile_photo/monica_profile.jpg",
+    color = "red",
     closable = FALSE,
-    "add text here",
+    #"add text here",
     footer = p( lenguage_outputs[['bodyText_monica.profile']]() )
   )
 })
@@ -33,10 +33,10 @@ output[['userBox_Ricardo']] = renderUI({
     subtitle = "Team 80 - One Correlation",
     type = NULL,
     width = 12,
-    src = "img/profile_photo/unknown_profile.png",
-    color = "yellow",
+    src = "img/profile_photo/ricardo_profile.png",
+    color = "red",
     closable = FALSE,
-    "add text here",
+    #"add text here",
     footer = p( lenguage_outputs[['bodyText_ricardo.profile']]() )
   )
 })
@@ -46,10 +46,10 @@ output[['userBox_Camila']] = renderUI({
     subtitle = "Team 80 - One Correlation",
     type = NULL,
     width = 12,
-    src = "img/profile_photo/unknown_profile.png",
-    color = "yellow",
+    src = "img/profile_photo/camila_profile.jpg",
+    color = "red",
     closable = FALSE,
-    "add text here",
+    #"add text here",
     footer = p( lenguage_outputs[['bodyText_camila.profile']]() )
   )
 })
@@ -59,10 +59,10 @@ output[['userBox_Jesus']] = renderUI({
     subtitle = "Team 80 - One Correlation",
     type = NULL,
     width = 12,
-    src = "img/profile_photo/unknown_profile.png",
-    color = "yellow",
+    src = "img/profile_photo/jesus_profile.jpg",
+    color = "red",
     closable = FALSE,
-    "add text here",
+    #"add text here",
     footer = p( lenguage_outputs[['bodyText_jesus.profile']]() )
   )
 })
@@ -72,10 +72,10 @@ output[['userBox_Julian']] = renderUI({
     subtitle = "Team 80 - One Correlation",
     type = NULL,
     width = 12,
-    src = "img/profile_photo/unknown_profile.png",
-    color = "yellow",
+    src = "img/profile_photo/julian_profile.jpg",
+    color = "red",
     closable = FALSE,
-    "add text here",
+    #"add text here",
     footer = p( lenguage_outputs[['bodyText_julian.profile']]() )
   )
 })

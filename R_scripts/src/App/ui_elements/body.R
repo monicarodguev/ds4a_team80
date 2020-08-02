@@ -24,7 +24,12 @@ output[['select_lenguage_output']] = renderUI(expr = {
 output[["tabItem_EDA"]] = renderUI({
   tagList(
     uiOutput('EDA_filter_box'),
-    uiOutput('EDA_info_box'),
+    uiOutput('EDA_info_box') %>% withSpinner(type = 7, color = "#000000", size = 1),
+    fluidRow(
+      column(
+        12, panel(reactableOutput('EDA_groupsTable') %>% withSpinner(type = 7, color = "#000000", size = 1) )
+      )
+    ),
     fluidRow(
       column(6, uiOutput('EDA_scatterplot_adherence')),
       column(6, uiOutput('EDA_radarplot_act'))
@@ -61,9 +66,9 @@ output[["tabItem_DEVELOPERS"]] = renderUI({
     )
   )
 })
-output[["tabItem_MODEL"]] = renderUI({
+output[["tabItem_VIDEO"]] = renderUI({
   tagList(
-    h4( lenguage_outputs[['sidebarText_MODEL']]() )
+    uiOutput('VIDEO')
   )
 })
 output[["tabItem_DOCUMENTATION"]] = renderUI({
@@ -87,8 +92,8 @@ output[["tabItems"]] = renderUI({
       uiOutput('tabItem_DEVELOPERS')
     ),
     tabItem(
-      tabName = 'sidebarItem_MODEL',
-      uiOutput('tabItem_MODEL')
+      tabName = 'sidebarItem_VIDEO',
+      uiOutput('tabItem_VIDEO')
     ),
     tabItem(
       tabName = 'sidebarItem_DOCUMENTATION',

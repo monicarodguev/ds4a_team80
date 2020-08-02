@@ -1,13 +1,13 @@
 lenguage_outputs <- reactiveValues()
 
 lenguage_outputs[['lenguage_table']] = reactive({
-  if(input[['select_lenguage_input']] == 'English'){
+  # if(input[['select_lenguage_input']] == 'English'){
     xx = select(lenguage_param, -Spanish_text)
     #xx = 'Span'
-  } else if(input[['select_lenguage_input']] == 'Spanish'){
-    xx = select(lenguage_param, -English_text)
-    #xx = 'Engl'
-  }
+  # } else if(input[['select_lenguage_input']] == 'Spanish'){
+  #   xx = select(lenguage_param, -English_text)
+  #   #xx = 'Engl'
+  # }
   xx %>% 
    set_names(c('Section', 'component', 'text'))
 })
